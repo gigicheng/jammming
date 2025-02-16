@@ -2,22 +2,15 @@ import './App.css'
 import styles from './App.module.css'
 import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
-import Track from './components/Track'
-import { useState, useEffect } from 'react'
+import Playlist from './components/Playlist'
+import { useState } from 'react'
 
 function App() {
   // TODO: useState here
-  const [results, setResults] = useState([{
-    song,
-    artist,
-    album,
-  }]);
+  const [searchText, setSearchText] = useState('');
+  const [searchTracks, setSearchTracks] = useState([]);
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
-  const playlistUrl = 'https://spotify23.p.rapidapi.com/playlist/?id=37i9dQZF1DX4Wsb4d7NKfP';
-
-  useEffect(() => {
-    fetch(playlistUrl).then((response) => setResults(results.response))
-  });
 
   function saveToSpotify() {
     // TODO: save playlist name and clear all tracks
@@ -30,10 +23,10 @@ function App() {
         <h1>Ja<span className={styles.highlight}>mmm</span>ing</h1>
       </header>
       <main>
-        <SearchBar />
+        <SearchBar searchText={searchText} setSearchText={setSearchText} setSearchTracks={setSearchTracks} />
         <div className={styles.gridContainer}>
-          <SearchResults className={styles.gridResults} />
-          <Track className={styles.gridTrack} handleClick={saveToSpotify} />
+          <SearchResults className={styles.gridResults} tracks={searchTracks} setPlaylistTracks={setPlaylistTracks} />
+          <Playlist className={styles.gridTrack} tracks={playlistTracks} setPlaylistTracks={setPlaylistTracks} handleClick={saveToSpotify} />
         </div>
       </main>
     </>

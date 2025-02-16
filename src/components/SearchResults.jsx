@@ -1,42 +1,13 @@
+/* eslint-disable react/prop-types */
 import styles from './SearchResults.module.css'
+import Tracklist from './Tracklist';
 
-function SearchResults() {
+function SearchResults({tracks, setPlaylistTracks}) {
     return (
         <>
             <div className={styles.results}>
                 <h2>Results</h2>
-                <ul className={styles.listItem}>
-                    <li>
-                        <div>
-                            <p>Song</p>
-                            <p className={styles.subtitle}>Artist<span> | Album</span></p>
-                        </div>
-                        <div>
-                            <button className={styles.plusSign}>+</button>
-                        </div>
-                    </li>
-                    <div className={styles.divider}></div>
-                    <li>
-                        <div>
-                            <p>Song</p>
-                            <p className={styles.subtitle}>Artist<span> | Album</span></p>
-                        </div>
-                        <div>
-                            <button className={styles.plusSign}>+</button>
-                        </div>
-                    </li>
-                    <div className={styles.divider}></div>
-                    <li>
-                        <div>
-                            <p>Song</p>
-                            <p className={styles.subtitle}>Artist<span> | Album</span></p>
-                        </div>
-                        <div>
-                            <button className={styles.plusSign}>+</button>
-                        </div>
-                    </li>
-                    <div className={styles.divider}></div>
-                </ul>
+                <Tracklist tracks={tracks} setPlaylistTracks={setPlaylistTracks} signType='add' />
             </div>
         </>
     );

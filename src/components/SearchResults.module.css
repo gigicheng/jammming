@@ -10,45 +10,6 @@
     padding: 10px 15px;
 }
 
-.listItem {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-}
-
-.divider {
-    border-top: 1px solid gray;
-    margin: 20px 0;
-    width: 100%;
-  }
-  
-.subtitle {
-    margin: 0;
-    color: gray;
-  }
-
   h2 {
     margin: 0;
-  }
-  
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
-
-  .plusSign {
-    font-size: 22px;
-    background: none;
-    color: #FFF;
-    border: none;
-  }
-
-  .plusSign:hover {
-    transform: scale(1.2);
-  }
-
-  .plusSign:active {
-    transform: scale(0.95);
   }

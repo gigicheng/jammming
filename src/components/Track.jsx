@@ -1,28 +1,35 @@
+/* eslint-disable react/prop-types */
 import styles from './Track.module.css'
 
-// eslint-disable-next-line react/prop-types
-function Track({handleClick}) {
+function Track({track, signType, setPlaylistTracks}) {
+    function handleAdd() {
+        setPlaylistTracks((prev) => 
+            [track, ...prev]
+        )
+    };
+
+    function handleDelete() {
+        setPlaylistTracks((prev) =>
+            prev.filter(p => p.data.id !== track.data.id)
+        )
+    };
+
     return (
         <>
-            <div className={styles.track}>
-            <input className={styles.input} type="text" placeholder="Please name your playlist here"/>
-            <div className={styles.divider}></div>
-                <ul className={styles.listItem}>
-                    <li>
-                        <div>
-                            <p>Song</p>
-                            <p className={styles.subtitle}>Artist<span> | Album</span></p>
-                        </div>
-                        <div>
-                            <button className={styles.deleteSign}>-</button>
-                        </div>
-                    </li>
-                    <div className={styles.divider}></div>
-                </ul>
-                <button className={styles.saveBtn} onClick={handleClick}>SAVE TO SPOTIFY</button>
+        <li>
+            <div>
+                <p>{track.data.name}</p>
+                <p className={styles.subtitle}>{track.data.artists?.items.map(artist => artist.profile.name).join(' & ')} | {track.data.albumOfTrack.name}</p>
             </div>
+            <div>
+                {signType === 'add'
+                    ? <button className={styles.plusSign} onClick={handleAdd}>+</button>
+                    : <button className={styles.deleteSign} onClick={handleDelete}>-</button>
+                }
+            </div>
+        </li>
         </>
-    );
-};
+    )
+}
 
 export default Track;

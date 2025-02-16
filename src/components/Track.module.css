@@ -1,85 +1,28 @@
-.track {
-    grid-column: 28 / 48;
-    text-align: left;
-    background-color: #2E0249;
-    opacity: 0.8;
-    width: 100%;
-    border-radius: 5px;
-    color: #FFF;
-    padding: 10px 15px;
-}
-
-.listItem {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-}
-
 li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid gray;
+  padding: 20px 0;
+}
 
-  .subtitle {
+.subtitle {
     margin: 0;
     color: gray;
-  }
+}
 
-.deleteSign {
+.plusSign, .deleteSign {
     background: none;
     font-size: 22px;
     border: none;
     color: #FFF;
-  }
-
-.deleteSign:hover {
-    transform: scale(1.2);
-  }
-
-.deleteSign:active {
-    transform: scale(0.95);
-  }
-
-.divider {
-    border-top: 1px solid gray;
-    margin: 20px 0;
-    width: 100%;
-  }
-
-.saveBtn {
-    display: flex;
-    justify-content: center;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin: 40px auto;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 30px;
-    color: #FFF;
-    background-color: #A91079;
-  }
-
-.saveBtn:hover {
-    background-color: #7e0d5a;
-  }
-
-.saveBtn:active {
-    transform: scale(0.95);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  }
-
-.input {
-    font-size: 30px;
-    margin-top: 30px;
-    padding: 15px 15px 15px 0;
-    width: 90%;
-    border: none;
-    color: #FFF;
-    background-color: transparent;
 }
 
-.input:focus {
-    outline: none;
+.plusSign:hover, .deleteSign:hover {
+    transform: scale(1.2);
+}
+
+.plusSign:active, .deleteSign:active{
+    transform: scale(0.95);
 }
