@@ -1,0 +1,25 @@
+.list {
+    display: flex;
+    /* justify-content: flex-start; */
+    padding: 0;
+    flex-direction: column;
+    list-style: none;
+}
+
+.listItem {
+    border-bottom: 1px solid gray;
+    padding: 20px 0;
+    width: 100%;
+    color: #FFF;
+}
+
+.myPlaylist {
+    padding: 10px;
+    margin: 0 0 20px 20px;
+    width: 300px;
+    min-height: 500px;
+    background-color: #2E0249;
+    opacity: 0.8;
+    color: #FFF;
+    border-radius: 5px;
+}

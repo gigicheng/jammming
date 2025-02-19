@@ -1,9 +1,9 @@
 .track {
-    grid-column: 28 / 48;
+    /* grid-area: playlist; */
     text-align: left;
     background-color: #2E0249;
     opacity: 0.8;
-    width: 100%;
+    /* width: 100%; */
     border-radius: 5px;
     color: #FFF;
     padding: 10px 15px;

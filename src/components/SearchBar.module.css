@@ -7,7 +7,6 @@
     border: none;
     background-color: #2E0249;
     color: #FFF;
-
 }
 
 .button:hover {
@@ -20,6 +19,7 @@
 }
 
 .input {
+    /* display: block; */
     font-size: 20px;
     padding: 15px 50px;
     border-radius: 5px;
@@ -28,4 +28,10 @@
 
 .input:focus {
     outline: none;
+}
+
+.gridSearchBar {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }

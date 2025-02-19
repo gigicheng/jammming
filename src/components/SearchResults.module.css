@@ -1,10 +1,10 @@
 .results {
-    grid-column: 3 / 26;
+    /* grid-area: result; */
     text-align: left;
     margin: 0;
     background-color: #2E0249;
     opacity: 0.8;
-    width: 100%;
+    /* width: 100%; */
     border-radius: 5px;
     color: #FFF;
     padding: 10px 15px;

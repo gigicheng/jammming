@@ -16,7 +16,7 @@ function Track({track, signType, setPlaylistTracks}) {
 
     return (
         <>
-        <li>
+        <li className={styles.track}>
             <div>
                 <p>{track.data.name}</p>
                 <p className={styles.subtitle}>{track.data.artists?.items.map(artist => artist.profile.name).join(' & ')} | {track.data.albumOfTrack.name}</p>
