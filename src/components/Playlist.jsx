@@ -2,13 +2,17 @@
 import styles from './Playlist.module.css'
 import Tracklist from './Tracklist';
 
-function Playlist({tracks, setPlaylistTracks}) {
+function Playlist({tracks, playlistName, setPlaylistTracks, onNameChange, onRmTrack, onSave}) {
+    function handlePlaylistNameChange(e) {
+        onNameChange(e.target.value);
+    };
+
     return (
         <>
             <div className={styles.track}>
-                <input className={styles.input} type="text" placeholder="Please name your playlist here"/>
-                <Tracklist tracks={tracks} setPlaylistTracks={setPlaylistTracks} signType='delete' />
-                <button className={styles.saveBtn}>SAVE TO SPOTIFY</button>
+                <input className={styles.input} value={playlistName} type="text" placeholder="Please name your playlist here" onChange={handlePlaylistNameChange} />
+                <Tracklist tracks={tracks} setPlaylistTracks={setPlaylistTracks} signType='delete' onRmTrack={onRmTrack} />
+                <button className={styles.saveBtn} onClick={onSave}>SAVE TO SPOTIFY</button>
             </div>
         </>
     );

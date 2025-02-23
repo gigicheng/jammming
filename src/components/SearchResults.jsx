@@ -2,11 +2,11 @@
 import styles from './SearchResults.module.css'
 import Tracklist from './Tracklist';
 
-function SearchResults({tracks, setPlaylistTracks}) {
+function SearchResults({tracks, onAddTrack, onRmTrack}) {
     return (
         <div className={styles.results}>
             <h2>Results</h2>
-            <Tracklist tracks={tracks} setPlaylistTracks={setPlaylistTracks} signType='add' />
+            <Tracklist tracks={tracks} onAddTrack={onAddTrack} onRmTrack={onRmTrack} signType='add' />
         </div>
     );
 };

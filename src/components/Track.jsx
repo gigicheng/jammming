@@ -1,30 +1,18 @@
 /* eslint-disable react/prop-types */
 import styles from './Track.module.css'
 
-function Track({track, signType, setPlaylistTracks}) {
-    function handleAdd() {
-        setPlaylistTracks((prev) => 
-            [track, ...prev]
-        )
-    };
-
-    function handleDelete() {
-        setPlaylistTracks((prev) =>
-            prev.filter(p => p.data.id !== track.data.id)
-        )
-    };
-
+function Track({track, signType, onAddTrack, onRmTrack}) {
     return (
         <>
         <li className={styles.track}>
             <div>
-                <p>{track.data.name}</p>
-                <p className={styles.subtitle}>{track.data.artists?.items.map(artist => artist.profile.name).join(' & ')} | {track.data.albumOfTrack.name}</p>
+                <p>{track.name}</p>
+                <p className={styles.subtitle}>{track.artists} | {track.album}</p>
             </div>
             <div>
                 {signType === 'add'
-                    ? <button className={styles.plusSign} onClick={handleAdd}>+</button>
-                    : <button className={styles.deleteSign} onClick={handleDelete}>-</button>
+                    ? <button className={styles.plusSign} onClick={() => onAddTrack(track)}>+</button>
+                    : <button className={styles.deleteSign} onClick={() => onRmTrack(track)}>-</button>
                 }
             </div>
         </li>
