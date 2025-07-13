@@ -41,7 +41,8 @@ const Spotify = {
 
     // 這個 method 會依使用者搜尋文字尋找曲目, 並取得每一首相關曲目的個別資訊
     async search(text) {
-        accessToken = Spotify.getAccessToken();
+       accessToken = Spotify.getAccessToken();
+
         // 依使用者搜尋文字 text 尋找曲目
         const response = await fetch(`https://api.spotify.com/v1/search?q=${text}&type=track`, {
             // method 預設為 "GET", 所以這邊可以省略不寫

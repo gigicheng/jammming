@@ -22,10 +22,9 @@
 .gridContainer {
     display: grid;
     grid-template-areas: 
-    "side search search"
-    "side result result"
-    "side result result";
-    grid-template-columns: 340px 1fr;
+    "search search"
+    "result result"
+    "result result";
     grid-template-rows: 200px 1fr;
     grid-gap: 20px;
     width: 100%;
@@ -36,9 +35,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
-    padding: 0 20px 20px 0;
+    padding: 0 20px 20px;
 }
 
-.gridSidebar {
-    grid-area: side;
+@media (max-width: 768px) {
+    .gridWrapper {
+        grid-template-columns: 1fr;
+    }
 }
+

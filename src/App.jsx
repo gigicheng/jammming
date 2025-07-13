@@ -4,7 +4,7 @@ import styles from './App.module.css'
 import SearchBar from './components/SearchBar'
 import SearchResults from './components/SearchResults'
 import Playlist from './components/Playlist'
-import Sidebar from './components/Sidebar'
+
 import { useState } from 'react'
 import { Spotify } from './utils/Spotify'
 
@@ -59,7 +59,7 @@ function App() {
       </header>
       <main>
         <div className={styles.gridContainer}>
-          <Sidebar className={styles.gridSidebar} />
+          
           <SearchBar onSearch={onSearch}/>
           <div className={styles.gridWrapper}>
             <SearchResults className={styles.gridResults} tracks={searchTracks} onAddTrack={handleAddTrack} onRmTrack={handleRmTrack} />
